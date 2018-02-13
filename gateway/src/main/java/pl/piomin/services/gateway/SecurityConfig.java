@@ -33,7 +33,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 //		auth.jdbcAuthentication().dataSource(dataSource);
-		auth.inMemoryAuthentication().withUser("root").password("password").roles("USER");
+
+//		.withClient("mobile-app")
+//				.authorities("ROLE_CLIENT")
+//				.authorizedGrantTypes("implicit", "refresh_token")
+//				.scopes("read")
+//				.autoApprove(true)
+//				.and()
+
+		auth.inMemoryAuthentication()
+				.withUser("root").password("password").roles("USER");
+//		auth.inMemoryAuthentication().withUser("mobile-app").
+
+
 	}
 	
 }

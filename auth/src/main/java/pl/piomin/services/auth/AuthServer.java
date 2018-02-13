@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAuthorizationServer
 @EnableDiscoveryClient
 @EnableResourceServer
-@EnableJdbcHttpSession
+//@EnableJdbcHttpSession
 @RestController
 public class AuthServer {
 
@@ -32,10 +32,10 @@ public class AuthServer {
 		return user;
 	}
 
-	@Bean
-	public DataSource dataSource() {
-		return DataSourceBuilder.create().url("jdbc:mysql://192.168.99.100:33306/default?useSSL=false")
-				.username("default").password("default").driverClassName("com.mysql.jdbc.Driver").build();
-	}
+//	@Bean
+//	public DataSource dataSource() {
+//		return DataSourceBuilder.create().url("jdbc:mysql://192.168.99.100:33306/default?useSSL=false")
+//				.username("default").password("default").driverClassName("com.mysql.jdbc.Driver").build();
+//	}
 
 }
