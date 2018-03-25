@@ -14,7 +14,8 @@ spring:
 logging:
   level:
     org.springframework.cloud.netflix.zuul: TRACE
-      
+    org.springframework.web.client:  TRACE
+    org.springframework.cloud.client: TRACE
 zuul:
   routes:  
     uaa:
@@ -33,6 +34,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 security:
+#  basi
   user:
     name: root
     password: password

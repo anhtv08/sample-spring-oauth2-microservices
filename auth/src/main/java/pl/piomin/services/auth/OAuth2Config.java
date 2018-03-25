@@ -1,7 +1,5 @@
 package pl.piomin.services.auth;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +10,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -28,7 +25,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		endpoints
 				.authenticationManager(this.authenticationManager)
-				.accessTokenConverter(accessTokenConverter())
+//				.accessTokenConverter(accessTokenConverter())
 				.tokenStore(tokenStore());
 //				.accessTokenConverter();
 
@@ -69,7 +66,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 				.and()
 				.withClient("customer-integration-system")
 				.secret("1234567890")
-				.authorities("ROLE_CLIENT")
+//				.authorities("ROLE_CLIENT")
 				.authorizedGrantTypes("client_credentials")
 				.scopes("read")
 				.autoApprove(true);

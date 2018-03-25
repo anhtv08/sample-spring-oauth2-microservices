@@ -1,5 +1,6 @@
 server:  
   port: ${PORT:9999}
+  contextPath : /auu
 
 spring:
   session:
@@ -15,16 +16,16 @@ logging:
   level:
     org.springframework.security: TRACE
       
-security:
-#  basic:
-#    enabled: false
-  user:
-    name: root
-    password: password
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: secret
+#security:
+##  basic:
+##    enabled: false
+#  user:
+#    name: root
+#    password: password
+#  oauth2:
+#    client:
+#      client-id: acme
+#      client-secret: secret
       
 eureka:
   client:
